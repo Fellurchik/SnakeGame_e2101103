@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	struct snake s = init_snake(10);
+	struct snake s = init_snake(5);
 	while (1)
 	{
 		draw(s);

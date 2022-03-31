@@ -19,6 +19,9 @@ struct snake move(struct snake s, int dir)
 	for (int i = 1; i < s.length; i++)
 		{ns.body[i] = s.body[i - 1];};
 
+	if (ns.head.x <= 0 || ns.head.x >= 120) { death(); }
+	else if (ns.head.y <= 0 || ns.head.y > 30) { death(); }
+
 	return ns;
 }
 
@@ -63,4 +66,15 @@ void draw(struct snake s)
 		printf(" ");
 	}
 	resetColors();
+}
+
+void death()
+{
+	init_snake(0);
+	clearScreen();
+	goTo(40, 13);
+	setForeground(MAGENTA);
+	printf("You dead :)\n\n\n");
+	resetColors();
+	exit();
 }

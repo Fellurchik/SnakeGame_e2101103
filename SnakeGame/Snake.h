@@ -23,3 +23,4 @@ struct snake init_snake(int len);
 void draw(struct snake s);
 int input_key(void);
 struct snake move(struct snake s, int dir);
+void death();
